@@ -52,3 +52,13 @@ php artisan migrate
 FOURSQUARE_API_KEY=""
 OPEN_WEATHER_API_KEY=""
 ```
+
+#### To run the app
+
+```
+php artisan serve
+npm run dev
+```
+
+- Once done, go to **http://127.0.0.1:8000**
+    - if you use a vhost or a different port, you need to **change** the port in the **resources/js/vue/http/api.js** because the baseUrl is currently hardcoded.

@@ -18,7 +18,7 @@ watch(places, async (newValue) => {
         name: newValue.name,
     };
 
-    let response = await api.post(`${utils.apiBaseUrl}/weather`, { ...params });
+    let response = await api.post('/weather', { ...params });
 
     let today = response.data.data.filter((item) => {
         return item.today === true;
@@ -41,7 +41,7 @@ watch(places, async (newValue) => {
 
 const removePlace = async (id) => {
 
-    await api.delete(`${utils.apiBaseUrl}/${id}/remove-saved-place/`);
+    await api.delete(`/${id}/remove-saved-place/`);
 
     toast.success('Place removed successfully', {
         position: 'top-right'
@@ -57,7 +57,7 @@ onBeforeMount(() => {
 });
 
 const fetchSavedPlaces = async () => {
-    let response = await api.get(`${utils.apiBaseUrl}/saved-places-weather`);
+    let response = await api.get('/saved-places-weather');
 
     let savedPlaces = response.data.saved_places;
 

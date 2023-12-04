@@ -15,7 +15,7 @@ const fetchPlaces = async (query) => {
 
     query = query.trim();
 
-    const response = await api.get(`${utils.apiBaseUrl}/places?search=${query}`);
+    const response = await api.get(`/places?search=${query}`);
 
     searchedPlaces.value = response.data.data;
 };
